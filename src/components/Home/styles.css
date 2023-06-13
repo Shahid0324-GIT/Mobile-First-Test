@@ -1,0 +1,96 @@
+.jokes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  max-width: 1140px;
+  background-image: url('https://images.pexels.com/photos/952670/pexels-photo-952670.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  min-height: 100vh;
+  background-size: cover;
+  position: relative;
+}
+
+.log-out-btn {
+  color: white;
+  background-color: purple;
+  font-weight: 600;
+  border-radius: 12px;
+  position: absolute;
+  right: 25%;
+  top: 10%;
+}
+
+.card-container {
+  width: 80%;
+  max-width: 720px;
+  border: 2px solid white;
+  border-radius: 12px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+  padding: 0.65rem 0.45rem;
+  background-color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 2rem;
+}
+
+.single-joke-text {
+  background-color: black;
+  color: yellow;
+}
+
+.setup {
+  background-color: black;
+  color: yellow;
+}
+
+.delivery {
+  background-color: black;
+  color: yellow;
+}
+
+.bg {
+  background-color: black;
+}
+
+.delivery-btn {
+  margin: 0.65rem 0;
+  color: white;
+  background-color: purple;
+  border-radius: 8px;
+  transition: all ease-in 0.5s;
+}
+
+.delivery-btn:hover {
+  transform: scale(1.1) rotate(-2deg);
+  transition: all ease-out 0.5s;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  width: 155px;
+  height: 55px;
+  font-size: 1rem;
+  margin: 2rem auto;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    min-width: 70%;
+    max-width: 450px;
+    padding: 10px 12px;
+    margin: 0 auto;
+  }
+
+  .log-out-btn {
+    right: 10%;
+    font-size: 16px;
+    height: 42px;
+    width: 105px;
+  }
+}
