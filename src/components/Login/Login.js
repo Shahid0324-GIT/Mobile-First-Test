@@ -14,12 +14,21 @@ const Login = props => {
   const [showUsers, setShowUsers] = useState(false)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [errorMsg, setErrorMsg] = useState('')
+  const [submitError, setSubmitError] = useState(false)
 
   // console.log(data)
 
   const onSubmitHandler = e => {
     e.preventDefault()
     // console.log('form submitted')
+
+    if (username === '' || password === '') {
+      setSubmitError(true)
+      setErrorMsg('Please Enter the required credentials')
+      return 0
+    }
+
     const {history} = props
     const loginUser = data.find(user => user.username === username)
     const isPasswordMatch = loginUser.password === password
@@ -29,7 +38,12 @@ const Login = props => {
     if (loginUser && isPasswordMatch) {
       Cookies.set('currUser', loginUser.username, {expires: 30})
       history.replace('/')
+    } else {
+      setSubmitError(true)
+      setErrorMsg('Please check the entered details')
     }
+
+    return true
   }
 
   const onUsernameChange = e => {
@@ -124,6 +138,7 @@ const Login = props => {
                 Login
               </button>
             </form>
+            {submitError && <p className="error">{errorMsg}</p>}
           </div>
         </div>
       </main>
